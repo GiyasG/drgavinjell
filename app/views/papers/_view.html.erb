@@ -1,0 +1,20 @@
+<% @authority.papers.each do |paper|%>
+<div class='row show-grid'>
+  <%= content_tag :h4, "#{paper.title}", class: "col-md-12"%>
+  <%= image_tag url_for(:controller => "photos", :action => "show_paper", :paper_id=>paper.id), class: "col-md-3 img-thumbnail"%>
+  <%= content_tag :h4, "Co-authors", class: "col-md-12"%>
+
+  <% paper.teams.each do |c|%>
+  <div class="col-md-3">
+   <%= content_tag :h5, "#{c.title+' '+c.name+' '+c.surname}" %>
+  <%= link_to "Delete", authority_paper_pteams_path(@authority, paper, c), class: "btn btn-danger", method: :delete %>
+  </div>
+  <% end%>
+</div>
+
+<div class="text-center">
+  <%= link_to 'Edit', [:edit, @authority, paper], class: "btn btn-warning"%>
+  <%= link_to 'Delete', [@authority, paper], class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<hr>
+<% end %>

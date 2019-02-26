@@ -1,0 +1,27 @@
+    <%= content_tag :span, "#{contact.street}"%>
+<div>
+    <%= content_tag :span, "#{contact.city}"%>
+    <%= content_tag :span, "#{contact.postcode}"%>
+</div>
+<div>
+    <%= content_tag :span, "#{contact.country}"%>
+</div>
+<div>
+    <%= content_tag :span, "Phone: #{contact.phone}"%>
+    <%= content_tag :span do%>
+      <%= content_tag :span, "Email:" %>
+      <%= mail_to ("#{contact.email}") %>
+    <% end%>
+
+
+    <div class="col-md-12 center">
+    <iframe height="300" frameborder="0" style="border:0""
+     src="https://www.google.com/maps/embed/v1/place?key=<%=Geokit::Geocoders::GoogleGeocoder.api_key%>&q=<%=contact.postcode.delete(' ')%>"
+     allowfullscreen>
+    </iframe>
+    </div>
+
+    <div class="col-md-12 center">
+      <%= content_tag :h4, "#{@client_ip} - #{@client_country}" %>
+    </div>
+  </div>

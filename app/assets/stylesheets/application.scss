@@ -1,0 +1,350 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require bootstrap
+ *= require animate
+ *= require_tree .
+ */
+
+
+@import 'bootstrap';
+
+* {
+  box-sizing: border-box;
+  font-family: "Arial";
+}
+
+body {
+  // background-image: url('/assets/spinner.svg');
+  background-repeat: repeat;
+  color: black;
+}
+
+.withback {
+  background-image: url("/assets/Molecular-1.png");
+  background-size: 1550px auto;
+  // background-repeat: no-repeat;
+  // background-position: top right;
+  color: black;
+}
+
+body p {
+  color: black;
+}
+
+h1, h2, h3, h4, h5 {
+  color: black;
+}
+
+h2, h3, h4, span {
+ color: #005ea5;
+}
+
+h1 {
+  background: -webkit-linear-gradient(#005ea5, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+
+a h4 {
+  color: #005ea5;
+}
+
+// .form_button {
+//   margin: auto;
+// }
+
+textarea {
+  min-width: 80%;
+  height: 200px;
+  overflow: hidden;
+}
+
+a.label-more, a.label-back {
+  padding: .2em .6em .3em;
+  font-size: 100%;
+  font-weight: bold;
+  color: #005ea5;
+  text-align: center;
+  border-radius: .25em;
+  border: 1px solid black;
+  background-color: white;
+  float: right;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+a.label-more:hover, a.label-back:hover{
+  background-color: aliceblue;
+}
+
+a.label-more:active, a.label-back:active{
+  background-color: lightblue;
+}
+
+a.label-delete, a.label-edit {
+  padding: .5em;
+  font-size: 80%;
+  font-weight: bold;
+  color: #005ea5;
+  text-align: center;
+  border-radius: .25em;
+  border: 1px solid black;
+  background-color: white;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+a.label-delete:hover, a.label-edit:hover {
+  background-color: aliceblue;
+}
+
+a.label-delete:active, a.label-edit:active {
+  background-color: lightblue;
+}
+
+hr {
+  clear: both;
+  margin-bottom: 0px;
+  border : 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.panel {
+  border : 0;
+  height: 5px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.well {
+  border : 0;
+  min-height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+//
+.shadow {
+  text-shadow: 1px 1px royalblue;
+}
+
+form {
+  color: black;
+}
+
+form label {
+  font-size: 1em;
+  color: black;
+  text-shadow: 0px 1px dodgerblue;
+}
+
+// form input {
+//   margin-bottom: 5px;
+// }
+
+.actions {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.img-thumbnail {
+  margin: 10px;
+  // margin-top: 10px;
+  // margin-bottom: 10px;
+  width:auto;
+  height: 115px;
+}
+
+.img-tiny {
+  margin: 10px;
+  // margin-top: 10px;
+  // margin-bottom: 10px;
+  width:auto;
+  height: 70px;
+}
+
+.photo_show {
+  width: 80%;
+  height: auto;
+}
+
+div.fixed_warning {
+  position: fixed;
+  background-color: white;
+  box-shadow: 3px 3px 3px 3px red;
+  // z-index: auto;
+  left: 40%;
+}
+
+.footer {
+  margin-top: 10px;
+  border-top: 10px solid #005ea5;
+  padding: 10px;
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #005ea5;
+}
+
+.footer li {
+  list-style: none;
+  padding-top: 5px;
+}
+
+.footer h1, h2, h3, h4, h5 {
+  color: black;
+}
+
+.project, .paper, .contact, .photo, .team, .search_results {
+ overflow-y: auto;
+ overflow-x: hidden;
+ padding-bottom: 10px;
+}
+
+.bordertop {
+  border-top: 1px solid black;
+  padding-top: 5px;
+}
+
+.indexpage img {
+width: 90%;
+}
+
+.row>h5 {
+  color: black;
+}
+
+.img-fit {
+  width: 90%;
+  height: auto;
+}
+
+.ptline {
+  clear: both;
+  margin: 10px;
+  padding-top: 40px;
+}
+
+#curt {
+  background-color: lightblue;
+  }
+
+#prj {
+  background-color: lightgrey;
+  }
+
+#ppr {
+  background-color: lightblue;
+}
+
+#cnts {
+  background-color: lightslategray;
+}
+
+#cnts div span, span, div span a {
+  color: white;
+}
+
+#phts {
+  background-color: lightslategray;
+}
+
+/* Multiitems Carousel */
+#crl_inner {
+  left: 3%;
+  width: 97%;
+}
+
+.carousel .carousel-inner .item a {
+  color: white;
+}
+
+.carousel .carousel-inner .item .well-br {
+  margin: 0px;
+}
+.carousel-control     		 { width:  4%; }
+.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+@media (max-width: 767px) {
+	.carousel-inner .active.left { left: -100%; }
+	.carousel-inner .next        { left:  100%; }
+	.carousel-inner .prev		 { left: -100%; }
+	.active > div { display:none; }
+	.active > div:first-child { display:block; }
+
+}
+@media (min-width: 767px) and (max-width: 992px ) {
+	.carousel-inner .active.left { left: -50%; }
+	.carousel-inner .next        { left:  50%; }
+	.carousel-inner .prev		 { left: -50%; }
+	.active > div { display:none; }
+	.active > div:first-child { display:block; }
+	.active > div:first-child + div { display:block; }
+}
+@media (min-width: 992px ) {
+	.carousel-inner .active.left { left: -16.7%; }
+	.carousel-inner .next        { left:  16.7%; }
+	.carousel-inner .prev		 { left: -16.7%; }
+}
+
+/* PAGINATION */
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #098b9e;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination a:hover {
+  color: darkblue;
+}
+
+.pagination {
+    // border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+/* ---------------------- */
+
+#proj_page a, #papr_page a, #proj_page button, #papr_page button {
+  margin: 5px;
+}

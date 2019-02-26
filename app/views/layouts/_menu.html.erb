@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path%>">Dr. Jell's Lab</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="<%= root_path%>">Home</a></li>
+        <li><%= link_to "Projects", "/#prj"%></li>
+        <li><%= link_to "Papers", "/#ppr"%></li>
+        <li><%= link_to "Photos", "/#phts"%></li>
+        <li><%= link_to "Contact", "/#cnts"%></li>
+        <li><%= link_to "Team", teams_path%></li>
+
+        <% if session[:editor_id] %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Data edit
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% if Authority.first.present? %>
+              <li><%= link_to "Main page", authority_path(Authority.first)%></li>
+            <% end %>
+            <li><%= link_to "Photos", photos_index_path%></li>
+            <li><%= link_to "Team", view_teams_path%></li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+
+      <%= form_tag(search_path, :method => "get", id: "search-form", class: "navbar-form navbar-right") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+      <%= submit_tag "Search", class: "btn btn-default" %>
+      <% end %>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if session[:editor_id] %>
+          <li><a href="<%= logout_path%>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

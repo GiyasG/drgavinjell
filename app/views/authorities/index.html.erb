@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+    <section class="row">
+    <div class='animated bounceInDown'>
+      <%= image_tag url_for(:controller => "photos", :action => "show_authority", :authority_id=>@authority.id, :id=>@authority.photos[0][:id]), class: "col-md-2"%>
+      <div class="col-md-10">
+      <%= content_tag :h4, "#{@authority.title} #{@authority.name} #{@authority.surname}", class: "col-md-12"%>
+      <%= content_tag :h5, "#{@authority.position}", class:"col-md-12"%>
+      </div>
+      <div class="col-md-12 text-justify">
+        <%= simple_format("#{@authority.about}")%>
+      </div>
+    </div>
+    </section>
+
+    <section id="phts" class="row">
+    <div class="carousel_wrap">
+    <%= render 'layouts/carousel_photos' %>
+    </div>
+    </section>
+
+    <section id="curt" class="row">
+        <div class='row'>
+          <%= render 'projects/current' %>
+        </div>
+    </section>
+
+
+    <section  id="prj" class='indexpage row'>
+    <h3 class="text-center animated fadeInUp">Projects</h3>
+      <div id="proj">
+        <!-- render @projects -->
+        <%= render :partial => "projects/project", :collection => @aprojects[0], :as => :project %>
+      </div>
+    <% if (@aprojects[1].present?) %>
+      <div  id="proj_page" class="ptline text-center">
+      <%= render :partial => "projects/project_pages", locals: {current_page: @c_page, pages: @aprojects.count } %>
+      </div>
+    <% end %>
+    </section>
+
+    <section id="ppr" class='indexpage row'>
+    <h3 class="text-center animated fadeInUp">Papers</h3>
+      <div id="papr">
+        <%= render :partial => "papers/paper", :collection => @apapers[0], :as => :paper %>
+      </div>
+      <% if (@apapers[1].present?) %>
+      <div id="papr_page" class="ptline text-center">
+      <%= render :partial => "papers/paper_pages", locals: {current_page: @c_page, pages: @apapers.count } %>
+      </div>
+    <% end %>
+    </section>
+
+    <section id="cnts" class='row text-center'>
+    <h4 class="animated fadeInUp">Contact</h4>
+    <%= render @contacts %>
+
+  </section>

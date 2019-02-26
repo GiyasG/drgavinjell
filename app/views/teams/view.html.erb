@@ -1,0 +1,24 @@
+<h2 class="text-center animated fadeInUp">Our people</h1>
+
+    <% @team.each do |team| %>
+    <div class='row'>
+        <%= image_tag url_for(:controller => "photos", :action => "show_team", :team_id=>team.id), class: "col-md-3"%>
+        <%= content_tag :h4, "#{team.title} #{team.name} #{team.surname}", class: "col-md-9 text-justify"%>
+        <%= simple_format("#{team.about}")%>
+
+        <%= link_to 'Edit', edit_team_path(team),  class: "btn btn-warning" %>
+        <%= link_to 'Delete', team_path(team),  class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= content_tag :h5, "Contacts:", class: "col-md-12" %>
+        <%= link_to "Add new contact", contactnew_teams_path(team), class: "btn btn-success" %>
+        <% team.contacts.each do |c|%>
+        <div class="col-md-12">
+         <%= content_tag :h5, "#{c.street+' '+c.city+' '+c.country+' '+c.postcode+' '+(c.phone).to_s+' '+c.email}", class: "col-md-12" %>
+        <%= link_to "Edit contact", contactedit_teams_path(team, c), class: "btn btn-warning" %>
+        <%= link_to "Delete contact", contact_teams_path(team, c), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+        <% end %>
+      </div>
+
+    <% end %>
+    <%= link_to 'Add new team member', new_team_path, class: "btn btn-primary" %>
+    <%= link_to 'Back', authorities_path, class: "label-back" %>
